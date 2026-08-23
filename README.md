@@ -1,21 +1,15 @@
-Yes — adding a few **high-quality visuals** will make the README look much more like a serious open-source product. I’d avoid stuffing it with random images; use **one hero visual, one product/demo visual, and a small architecture/feature visual**.
-
-For the visual style, these are good references: Unsplash has free-to-use tech/3D imagery, including a dark abstract 3D render and a developer workspace. ([Unsplash][1])
-
-I recommend changing the top of your README to this:
-
 # 🔎 Username Checker
 
 <p align="center">
-  <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?auto=format&fit=crop&w=1600&q=85" alt="Username Checker — futuristic technology background" width="100%">
+  <img src="./assets/hero-preview.png" alt="Username Checker — Premium username discovery platform" width="100%">
 </p>
 
-<h3 align="center">
-  Discover your username across the web.
-</h3>
+<p align="center">
+  <strong>Discover your username across the web.</strong>
+</p>
 
 <p align="center">
-  A premium, open-source username discovery tool for social media, gaming, developer, creator, and community platforms.
+  A modern, privacy-conscious username discovery tool for social media, gaming, developer, creator, and community platforms.
 </p>
 
 <p align="center">
@@ -23,25 +17,58 @@ I recommend changing the top of your README to this:
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-111827?style=for-the-badge)](#)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-111827?style=for-the-badge\&logo=github)](#)
 [![License](https://img.shields.io/badge/License-MIT-111827?style=for-the-badge)](LICENSE)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=111111)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-111827?style=for-the-badge\&logo=github)](https://pages.github.com/)
 
 </p>
 
 ---
 
-## ✨ See Username Checker in Action
+## ✦ About
 
-<p align="center">
-  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=85" alt="Developer workspace" width="90%">
-</p>
+**Username Checker** is an open-source web application designed to make username discovery faster and easier.
+
+Instead of manually opening dozens of platforms and searching for the same username repeatedly, enter a username once and get a centralized overview of where that username appears to be:
+
+* 🟢 **Available**
+* 🔴 **Taken**
+* 🟡 **Unknown / Unable to verify**
+
+The project focuses on **accuracy, transparency, performance, privacy, and premium UI design**.
 
 > **One username. Multiple platforms. One clean search.**
 
-Username Checker brings username discovery into one polished interface instead of forcing users to manually open dozens of websites.
+---
+
+## 🚀 What Can You Check?
+
+Username Checker is designed to cover multiple areas of the internet.
+
+### 🌐 Social
+
+Instagram · TikTok · X · Reddit · Facebook · Snapchat · Pinterest
+
+### 🎮 Gaming
+
+Minecraft · Roblox · Steam · Twitch
+
+### 💻 Developer
+
+GitHub · GitLab · Dev.to · Stack Overflow · CodePen
+
+### 🎨 Creator
+
+Behance · Dribbble · Vimeo · SoundCloud
+
+### 💬 Community
+
+Discord · Telegram · Mastodon · Bluesky
+
+The platform architecture is modular, allowing additional services to be added over time.
 
 ---
 
-## 🚀 What It Does
+# 🔍 How It Works
 
 Enter a username such as:
 
@@ -49,328 +76,462 @@ Enter a username such as:
 a24f
 ```
 
-Username Checker analyzes supported platforms and presents the results in one dashboard.
+Username Checker validates the input and begins checking supported platforms independently.
 
 ```text
-┌────────────────────────────────────────────────────┐
-│                                                    │
-│   Username                                         │
-│   a24f                                              │
-│                                                    │
-│   ─────────────────────────────────────────────    │
-│                                                    │
-│   🟢 18 Available    🔴 9 Taken    🟡 4 Unknown   │
-│                                                    │
-└────────────────────────────────────────────────────┘
+                 USERNAME
+                    │
+                    ▼
+          ┌──────────────────┐
+          │    VALIDATION    │
+          └────────┬─────────┘
+                   │
+                   ▼
+          ┌──────────────────┐
+          │ PLATFORM SCANNER │
+          └────────┬─────────┘
+                   │
+          ┌────────┼────────┐
+          ▼        ▼        ▼
+      AVAILABLE  TAKEN    UNKNOWN
+          │        │        │
+          └────────┼────────┘
+                   ▼
+             RESULT DASHBOARD
 ```
 
-Results are categorized as:
+Each platform is checked independently.
 
-| Status | Meaning                                                   |
-| :----: | --------------------------------------------------------- |
-|   🟢   | **Available** — no public profile was detected            |
-|   🔴   | **Taken** — a matching public profile was detected        |
-|   🟡   | **Unknown** — the platform could not be reliably verified |
-
-> **Unknown does not mean Available.**
+If one platform fails, the rest of the scan continues.
 
 ---
 
-## 🌐 Platform Coverage
+# 📊 Result System
 
-Username Checker is designed to support a broad range of platforms.
+Username Checker deliberately uses three states.
 
-### Social
+|      Status      | Meaning                                     |
+| :--------------: | ------------------------------------------- |
+| 🟢 **Available** | No matching public profile was detected     |
+|   🔴 **Taken**   | A matching public profile was detected      |
+|  🟡 **Unknown**  | The platform could not be reliably verified |
 
-`Instagram` · `TikTok` · `X` · `Reddit` · `Facebook` · `Snapchat` · `Pinterest`
+### ⚠️ Important
 
-### Gaming
+**Unknown does NOT mean Available.**
 
-`Minecraft` · `Roblox` · `Steam` · `Twitch`
-
-### Developer
-
-`GitHub` · `GitLab` · `Dev.to` · `Stack Overflow` · `CodePen`
-
-### Creative
-
-`Behance` · `Dribbble` · `Vimeo` · `SoundCloud`
-
-### Community
-
-`Discord` · `Telegram` · `Mastodon` · `Bluesky`
-
-The platform system is modular, allowing additional services to be added without rebuilding the entire application.
+This distinction is extremely important because many websites prevent automated browser requests.
 
 ---
 
-## 🧊 Built to Feel Like a Product
+# 🧠 Accuracy First
 
-Username Checker isn't intended to look like a basic utility page.
+Username availability sounds simple, but modern platforms can make automated verification difficult.
 
-The interface uses a carefully designed visual system featuring:
-
-* ◈ layered depth
-* ◈ subtle 3D effects
-* ◈ interactive backgrounds
-* ◈ smooth scrolling
-* ◈ refined typography
-* ◈ responsive cards
-* ◈ progressive result animations
-* ◈ premium dark surfaces
-* ◈ subtle glass effects
-* ◈ responsive layouts
-
-The goal is simple:
-
-> **Utility underneath. Product experience on top.**
-
----
-
-## ⚡ How It Works
-
-<p align="center">
-
-### 01
-
-**ENTER**
-
-Enter the username you want to investigate.
-
-↓
-
-### 02
-
-**SCAN**
-
-Username Checker independently checks supported platforms.
-
-↓
-
-### 03
-
-**DISCOVER**
-
-Review where the username appears to be available, taken, or unverifiable.
-
-</p>
-
----
-
-## 🧠 Accuracy Over Fake Results
-
-Username availability isn't always possible to determine from a browser.
-
-Platforms can use:
+Platforms may use:
 
 * CORS restrictions
 * authentication
-* rate limits
-* anti-bot systems
-* dynamic pages
+* rate limiting
+* anti-bot protection
+* Cloudflare or similar systems
+* dynamic profile pages
 * private APIs
 * regional restrictions
+* username reservation systems
 
-Username Checker therefore follows one important principle:
+Because of this, Username Checker follows one core principle:
 
-### **Never turn a failed request into a fake "Available" result.**
+> ### Never turn a failed request into a fake "Available" result.
 
-If verification isn't reliable, the platform receives:
+If a platform cannot be reliably verified, it is reported as:
 
 ```text
 ? UNKNOWN
 ```
 
-This keeps the application honest.
+rather than incorrectly reporting:
+
+```text
+✓ AVAILABLE
+```
+
+This makes the application more transparent and trustworthy.
 
 ---
 
-## 🔐 Privacy First
+# ✨ Premium Interface
 
-Username Checker doesn't require users to provide:
+Username Checker is intentionally designed to avoid the typical cheap utility-site appearance.
 
-* passwords
-* social-media credentials
-* account access
-* unnecessary personal information
+The interface focuses on:
 
-The project is designed around minimal data handling and client-side operation where technically possible.
+* refined typography
+* deep graphite surfaces
+* subtle navy tones
+* layered depth
+* sophisticated cards
+* soft shadows
+* subtle glass effects
+* interactive backgrounds
+* 3D-inspired depth
+* smooth transitions
+* responsive layouts
+* professional micro-interactions
+
+The goal:
+
+> **Utility underneath. Product experience on top.**
 
 ---
 
-## 🛠️ Technology
+# 🌌 Interactive Visual System
+
+The website uses subtle visual movement rather than overwhelming effects.
+
+Possible effects include:
+
+* interactive background elements
+* mouse-responsive depth
+* scroll-based transitions
+* 3D-inspired objects
+* animated result cards
+* progressive scan animations
+* subtle particle systems
+
+The visual layer should remain secondary to the actual checker.
+
+No excessive neon.
+
+No distracting animations.
+
+No giant glowing objects covering the interface.
+
+---
+
+# 📱 Responsive by Design
+
+Username Checker is designed for:
+
+* 🖥️ Desktop
+* 💻 Laptop
+* 📱 Mobile
+* 📟 Tablet
+
+The interface adapts to different screen sizes while preserving the same visual hierarchy.
+
+Mobile layouts are intentionally designed rather than simply shrinking desktop components.
+
+---
+
+# 🔐 Privacy
+
+Username Checker is designed around minimal data handling.
+
+The interface does not require:
+
+* ❌ Passwords
+* ❌ Social-media credentials
+* ❌ Account access
+* ❌ Unnecessary personal information
+
+Where technically possible, checks are performed directly from the browser.
+
+The project does not require users to create an account just to check a username.
+
+---
+
+# ⚡ Performance
+
+Performance is treated as a feature.
+
+The project aims to:
+
+* minimize unnecessary dependencies
+* avoid large frameworks
+* keep animations efficient
+* handle platform failures independently
+* avoid blocking the main interface
+* reduce visual effects on weaker devices
+* respect `prefers-reduced-motion`
+
+If advanced 3D/WebGL effects are used, they should gracefully degrade when unavailable.
+
+---
+
+# 🛠️ Technology
 
 <p align="center">
 
-<img src="https://skillicons.dev/icons?i=html,css,js,github" alt="Technology stack">
+<img src="https://skillicons.dev/icons?i=html,css,js,github" alt="HTML CSS JavaScript GitHub">
 
 </p>
 
-Built with:
+### Core
 
 * HTML5
 * CSS3
 * Vanilla JavaScript
+
+### Browser APIs
+
 * Fetch API
 * Intersection Observer
-* Responsive CSS
+* Web APIs
+* Local browser functionality
+
+### Deployment
+
 * GitHub Pages
 
-No heavy frontend framework is required.
+The project intentionally avoids unnecessary frontend framework complexity.
 
 ---
 
-## 📁 Project Architecture
+# 📁 Project Structure
 
 ```text
 username-checker/
 │
 ├── index.html
-│
 ├── style.css
-│
 ├── script.js
-│
 ├── README.md
-│
 ├── LICENSE
 │
 └── assets/
+    ├── hero-preview.png
     └── favicon.svg
 ```
 
-Simple.
-
-Portable.
-
-GitHub Pages friendly.
+The structure is intentionally simple so the project can be understood and modified easily.
 
 ---
 
-## 🖥️ Interface Preview
+# 🧩 Platform Architecture
 
-> Replace this section with screenshots/GIFs of your actual website once the UI is finished.
+Platforms should be represented through a centralized configuration system.
 
-<p align="center">
+Example:
 
-<img src="https://placehold.co/1200x650/0b0d12/ffffff?text=USERNAME+CHECKER+%E2%80%94+SEARCH+INTERFACE" alt="Username Checker search interface preview" width="95%">
+```javascript
+{
+    name: "GitHub",
+    category: "Developer",
+    icon: "...",
 
-</p>
+    profileUrl: username =>
+        `https://github.com/${username}`,
 
-### Search
-
-```text
-              Find Your Username Everywhere.
-
-      Check username availability across the platforms
-          that matter.
-
-       ┌──────────────────────────────┐
-       │ Enter a username...          │  [ CHECK ]
-       └──────────────────────────────┘
+    check: async username => {
+        // Platform-specific verification
+    }
+}
 ```
 
-### Results
+This makes it possible to add new platforms without rewriting the entire application.
+
+Each platform should:
+
+1. Validate the username appropriately.
+2. Perform its own check.
+3. Handle failures independently.
+4. Return a consistent status.
+5. Never treat network failure as availability.
+6. Provide manual verification when automated checking is unavailable.
+
+---
+
+# 🖥️ Product Preview
+
+Once the website is running, replace the preview below with an actual screenshot of the application.
 
 ```text
-      a24f
-
-      18 AVAILABLE
-       9 TAKEN
-       4 UNKNOWN
-
- ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
- │   GitHub    │ │  Instagram  │ │   TikTok    │
- │             │ │             │ │             │
- │ ✓ Available │ │ ● Taken     │ │ ? Unknown   │
- │             │ │             │ │             │
- │ View →      │ │ View →      │ │ Verify →    │
- └─────────────┘ └─────────────┘ └─────────────┘
+┌──────────────────────────────────────────────────────────┐
+│                                                          │
+│  Username Checker                         GitHub  About  │
+│                                                          │
+│                 Find Your Username                       │
+│                    Everywhere.                           │
+│                                                          │
+│       Check your username across the platforms           │
+│                  that matter.                            │
+│                                                          │
+│       ┌───────────────────────────────┐ ┌───────────┐    │
+│       │ Enter a username...            │ │  CHECK    │    │
+│       └───────────────────────────────┘ └───────────┘    │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 📊 Project Philosophy
+# 📈 Results Dashboard
+
+Example result layout:
 
 ```text
-                  ┌───────────────┐
-                  │   USERNAME    │
-                  └───────┬───────┘
-                          │
-                          ▼
-               ┌─────────────────────┐
-               │   PLATFORM SCAN     │
-               └──────────┬──────────┘
-                          │
-             ┌────────────┼────────────┐
-             ▼            ▼            ▼
-        ┌─────────┐  ┌─────────┐  ┌─────────┐
-        │AVAILABLE│  │  TAKEN  │  │ UNKNOWN │
-        └─────────┘  └─────────┘  └─────────┘
-             │            │            │
-             └────────────┼────────────┘
-                          ▼
-                   ┌─────────────┐
-                   │   RESULTS   │
-                   └─────────────┘
+                    a24f
+
+        ┌──────────┬──────────┬──────────┐
+        │    18    │     9    │     4    │
+        │ AVAILABLE│  TAKEN   │ UNKNOWN  │
+        └──────────┴──────────┴──────────┘
+
+
+ ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
+ │     GitHub     │ │   Instagram    │ │     TikTok     │
+ │                │ │                │ │                │
+ │  ✓ Available   │ │  ● Taken       │ │  ? Unknown     │
+ │                │ │                │ │                │
+ │  View Profile  │ │  View Profile  │ │  Verify →      │
+ └────────────────┘ └────────────────┘ └────────────────┘
 ```
-
-The architecture is intentionally designed around independent platform checks.
-
-One platform failing should never break the entire scan.
 
 ---
 
-## 🗺️ Roadmap
+# 🧪 Error Handling
 
-### Foundation
+Username Checker should gracefully handle:
 
-* [x] Premium interface
-* [x] Responsive design
+* empty usernames
+* invalid usernames
+* unsupported characters
+* usernames that are too long
+* network failures
+* CORS restrictions
+* platform timeouts
+* rate limits
+* unavailable services
+
+A single platform failure should never crash the application.
+
+---
+
+# ♿ Accessibility
+
+The project aims to support:
+
+* semantic HTML
+* keyboard navigation
+* visible focus states
+* accessible buttons
+* ARIA labels where required
+* sufficient contrast
+* readable typography
+* reduced-motion preferences
+* meaningful alternative text
+
+Accessibility should be considered during development rather than added at the end.
+
+---
+
+# 🗺️ Roadmap
+
+## Phase 01 — Foundation
+
+* [x] Premium landing page
+* [x] Username input
 * [x] Username validation
 * [x] Result dashboard
-* [x] Platform categories
-* [x] GitHub Pages compatibility
+* [x] Platform cards
+* [x] Responsive layout
+* [x] GitHub Pages support
 
-### Platform Expansion
+## Phase 02 — Platform Expansion
 
 * [ ] More social networks
-* [ ] More gaming services
+* [ ] More gaming platforms
 * [ ] More developer platforms
 * [ ] More creator platforms
+* [ ] Improved platform verification
 
-### Advanced Verification
+## Phase 03 — Advanced Verification
 
 * [ ] Optional backend
 * [ ] API integrations
-* [ ] Improved verification
-* [ ] Rate-limit handling
 * [ ] Platform-specific APIs
+* [ ] Better rate-limit handling
+* [ ] Improved verification accuracy
 
-### Future
+## Phase 04 — Advanced Features
 
 * [ ] Bulk username checking
 * [ ] Username comparison
-* [ ] Exportable reports
-* [ ] Shareable results
-* [ ] Public developer API
+* [ ] Export results
+* [ ] Shareable reports
+* [ ] Developer API
 * [ ] Custom platform integrations
 
 ---
 
-## 🤝 Contributing
+# 🌐 GitHub Pages
+
+Username Checker is designed to work with GitHub Pages.
+
+### Deployment
+
+1. Push the repository to GitHub.
+
+2. Open:
+
+```text
+Repository
+→ Settings
+→ Pages
+```
+
+3. Select:
+
+```text
+Source: Deploy from a branch
+Branch: main
+Folder: / (root)
+```
+
+4. Click **Save**.
+
+5. GitHub will generate your public website URL.
+
+No server is required for the static frontend.
+
+---
+
+# 💻 Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/username-checker.git
+```
+
+Enter the directory:
+
+```bash
+cd username-checker
+```
+
+Then open the project using your preferred local development server.
+
+For VS Code, **Live Server** is an easy option.
+
+---
+
+# 🤝 Contributing
 
 Contributions are welcome.
 
 You can contribute by:
 
-* adding a platform
-* improving verification
+* adding new platforms
+* improving platform detection
 * fixing bugs
 * improving accessibility
 * improving performance
-* improving the UI
-* reporting inaccurate results
+* improving the interface
+* improving documentation
+
+Example:
 
 ```bash
 git checkout -b feature/new-platform
@@ -386,39 +547,57 @@ Then open a Pull Request.
 
 ---
 
-## ⚠️ Disclaimer
+# 🐛 Bug Reports
+
+When opening an issue, provide:
+
+* Browser
+* Operating system
+* Platform affected
+* Username tested
+* Expected result
+* Actual result
+* Console errors if available
+
+Never submit passwords, authentication tokens, or private account information.
+
+---
+
+# ⚠️ Disclaimer
 
 Username Checker is an independent open-source project.
 
-It is not affiliated with or endorsed by the platforms it checks.
+It is not affiliated with, sponsored by, or endorsed by any platform it checks.
 
 All platform names, logos, trademarks, and intellectual property belong to their respective owners.
 
-Results are informational and may not represent the final availability determined by a platform's own registration system.
+Availability results are informational and may differ from the final result shown by a platform's own registration system.
 
 ---
 
-## 📜 License
+# 📜 License
 
-Released under the **MIT License**.
+Username Checker is released under the **MIT License**.
 
-See [`LICENSE`](LICENSE) for details.
+See [`LICENSE`](LICENSE) for the complete license.
 
 ---
 
-## ⭐ Support the Project
+# ⭐ Support
 
 If you find Username Checker useful:
 
-**⭐ Star the repository**
+⭐ **Star the repository**
 
-**🍴 Fork the project**
+🍴 **Fork the project**
 
-**🐛 Report bugs**
+🐛 **Report bugs**
 
-**💡 Suggest platforms**
+💡 **Suggest platforms**
 
-**🔧 Contribute improvements**
+🔧 **Submit improvements**
+
+Every contribution helps the project grow.
 
 ---
 
@@ -430,18 +609,8 @@ If you find Username Checker useful:
 
 ## 🚀 One Search.
 
-### Username Checker
+**Username Checker**
 
-**Built for developers. Built for creators. Built for the web.**
+*Built for developers. Built for creators. Built for the web.*
 
 </p>
-
----
-
-### 🖼️ Visual Credits
-
-The README uses external visual assets for presentation. For production, preferably download approved assets into `assets/` and reference them locally rather than relying on remote image URLs.
-
-The abstract 3D visual can be sourced from Unsplash's free-to-use collection, and the developer workspace visual can similarly be sourced from Unsplash. ([Unsplash][1])
-
-[1]: https://unsplash.com/photos/a-glossy-black-abstract-shape-on-a-dark-background-k3AaD-h6iGk?utm_source=chatgpt.com "A glossy black abstract shape on a dark background photo – Free Abstract Image on Unsplash"
